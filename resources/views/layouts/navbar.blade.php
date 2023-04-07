@@ -65,6 +65,9 @@
                             <a class="nav-link @if( Request::is('portofolio')) active fw-bold @endif"  href="{{ route('portofolio') }}">Portofolio</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link @if( Request::is('sosmed')) active fw-bold @endif"  href="{{ route('update.sosmed') }}">Socmed</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link @if( Request::is('profile')) active fw-bold @endif" href="{{ route('update.profile') }}">Profile</a>
                         </li>
                     </ul>

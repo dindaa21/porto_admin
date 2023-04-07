@@ -1,5 +1,6 @@
 @extends('layouts.navbar')
 @section('content')
+@include('flash')
     <div>
         <div class="container">
             <div class="d-flex justify-content-center align-items-center row">

@@ -36,7 +36,11 @@ class UpdateController extends Controller
             return view('profile', compact('user'));
         }
 
-        // return view('home');
+        $user->name  = $request->name;
+        $user->email = $request->email;
+        $user->update();
+
+        return back()->with('success', 'Berhasil mengubah data!');
     }
 
     public function sosmed(Request $request)
