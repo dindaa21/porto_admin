@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Dashboard;
 use App\Models\Profile;
+use App\Models\Project;
 use App\Models\Socmed;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -67,5 +68,13 @@ class UpdateController extends Controller
         }
 
         return redirect()->route('home.index')->with('success', 'Berhasil Mengubah Link Sosial Media Kamu!');
+    }
+
+    public function portofolioDelete($id)
+    {
+        $data = Project::where('id', $id)->first();
+        $del = $data->delete();
+
+        return redirect()->route('portofolio')->with('success', 'Berhasil Menghapus Project "'.$data->title.'"');
     }
 }

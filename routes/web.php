@@ -18,10 +18,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::match(['get','post'], '/login', [AuthController::class, 'login'])->name('login');
 
 Route::group([
@@ -29,9 +25,9 @@ Route::group([
 ], function(){
     Route::get('/', [MainController::class, 'index'])->name('home.index');
     Route::get('/portofolio', [MainController::class, 'portofolio'])->name('portofolio');
+    Route::get('/portofolio/{id}', [UpdateController::class, 'portofolioDelete'])->name('portofolio.delete');
     Route::get('/about-me', [MainController::class, 'aboutMe'])->name('about-me');
 });
-
 
 Route::group([
     'as' => "create.",

@@ -34,7 +34,9 @@
                   <h5 class="card-title">{!! $pro->title !!}</h5>
                   <p class="card-text">{!! $pro->description !!}</p>
                   <div class="text-end">
-                    {{-- <a href="{{  }}" class="text-primary"><p> Selengkapnya...</p></a> --}}
+                    <a href="{{ route('portofolio.delete', $pro->id) }}">
+                      <i class="fas fa-trash-alt fa-lg" style="color: #ff000d;"></i>
+                    </a>
                   </div>
                 </div>
               </div>
